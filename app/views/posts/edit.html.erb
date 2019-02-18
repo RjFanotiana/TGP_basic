@@ -1,0 +1,27 @@
+<h1>Editing Post</h1>
+
+
+
+
+<form action="/posts/1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="patch" />
+
+		<input  name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+
+	<div class="field">
+		<label >User <%= current_user.email %> </label>
+		<input type="hidden" name="post[user_id]" value=" <%= current_user.id %> " >
+	</div>
+
+
+  <div class="field">
+    <label for="post_body">Body</label>
+    <input type="text" value="gcyitycu" name="post[body]" id="post_body" />
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Update Post" data-disable-with="Update Post" />
+  </div>
+</form>
+
+<a href="/posts/1">Show</a> |
+<a href="/posts">Back</a>

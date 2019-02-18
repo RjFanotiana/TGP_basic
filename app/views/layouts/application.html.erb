@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AppScafold</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+
+  <%= link_to "TheGossipProject_BASIC", '/' %> | <%= link_to " A propos ", static_A_propos_path %> | <%= link_to "contact", static_Contact_path  %> 
+  |<% if user_signed_in? %><%= link_to "deconnect ", destroy_user_session_path , method: :delete %> <% else %><%= link_to "connect" , new_user_session_path  %>  <% end %>
+
+
+  <%= yield %>
+</body>
+</html>
